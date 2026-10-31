@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pink site · About</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="border-bottom mb-4" style="border-color:#ffb6c1 !important;">
+    <nav class="navbar navbar-expand-md container py-3">
+      <div class="container-fluid px-0">
+
+        <a class="navbar-brand fs-2 fw-light mb-0 text-decoration-none"
+           href="home.html"
+           style="color:#c74b6b; letter-spacing:2px; text-shadow:0 2px 5px rgba(255,192,203,0.6);">
+          🌸 pink petals
+        </a>
+
+        <button class="navbar-toggler border-0" type="button"
+                data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"
+                style="background:#ffe4e9; border:1px solid #ffb6c1 !important; border-radius:40px; padding:0.4rem 0.9rem;">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+          <ul class="navbar-nav gap-2 gap-md-4 mt-3 mt-md-0">
+            <li class="nav-item">
+              <a class="nav-link rounded-pill px-3 py-2 fw-semibold"
+                 href="home.html"
+                 style="color:#a54f68;">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link rounded-pill px-3 py-2 fw-semibold active"
+                 href="about.html"
+                 style="background:#ffb6c1; color:#4a1e2b; border:1px solid #ff8da1; box-shadow:0 4px 10px rgba(255,140,160,0.3);"
+                 aria-current="page">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link rounded-pill px-3 py-2 fw-semibold"
+                 href="contact.html"
+                 style="color:#a54f68;">Contact</a>
+            </li>
+              <li class="nav-item">
+    <a class="nav-link rounded-pill px-3 py-2 fw-semibold"
+       href="crud.html"
+       style="color:#a54f68;">CRUD</a>
+  </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-5" style="display:block; flex:none; align-items:unset;">
+
+    <!-- ============ 1. HERO (jQuery text typing effect) ============ -->
+    <section class="p-5 mb-4 rounded-4 shadow-sm"
+             style="background:#ffeef2; border:1px solid #ffc1cc;">
+      <div class="container-fluid py-3">
+        <h2 class="display-5 fw-light" style="color:#b3415e;">
+          About this <span id="typingTarget"></span><span class="typing-cursor">|</span>
+        </h2>
+        <p class="col-md-8 fs-5">
+          We believe every website needs a touch of pink. This tiny site was built to show
+          how a simple palette can make everything feel warm and friendly.
+        </p>
+        <button id="shuffleColors" class="btn btn-lg rounded-pill px-4"
+                style="background:#ffb6c1; color:#4a1e2b; border:1px solid #ff8da1;">
+          Shuffle pink shades 🎨
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ 2. STATS (jQuery animate + counter) ============ -->
+    <section class="row g-4 mb-5 text-center">
+      <div class="col-6 col-md-3">
+        <div class="p-4 rounded-4 shadow-sm h-100" style="background:#ffe2eb;">
+          <div class="display-6 fw-bold counter" data-target="3" style="color:#b3415e;">0</div>
+          <div class="small">pages</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="p-4 rounded-4 shadow-sm h-100" style="background:#ffe2eb;">
+          <div class="display-6 fw-bold counter" data-target="100" style="color:#b3415e;">0</div>
+          <div class="small">% pink</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="p-4 rounded-4 shadow-sm h-100" style="background:#ffe2eb;">
+          <div class="display-6 fw-bold counter" data-target="42" style="color:#b3415e;">0</div>
+          <div class="small">roses 🌹</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="p-4 rounded-4 shadow-sm h-100" style="background:#ffe2eb;">
+          <div class="display-6 fw-bold counter" data-target="7" style="color:#b3415e;">0</div>
+          <div class="small">jQuery demos</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3. TOGGLE PANELS (jQuery slideToggle) ============ -->
+    <section class="mb-5">
+      <h2 class="mb-4" style="color:#b3415e; border-left:6px solid #ff8da1; padding-left:1.25rem;">
+        Why pink? (click to reveal)
+      </h2>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <button class="btn w-100 rounded-pill toggle-btn"
+                  data-target="#panel1"
+                  style="background:#ffb6c1; color:#4a1e2b; border:1px solid #ff8da1;">
+            Softness
+          </button>
+          <div id="panel1" class="toggle-panel mt-2 p-3 rounded-4"
+               style="display:none; background:#ffe4e9; color:#6b2d44;">
+            Pink lowers visual tension — everything feels gentle.
+          </div>
+        </div>
+        <div class="col-md-4">
+          <button class="btn w-100 rounded-pill toggle-btn"
+                  data-target="#panel2"
+                  style="background:#ffb6c1; color:#4a1e2b; border:1px solid #ff8da1;">
+            Warmth
+          </button>
+          <div id="panel2" class="toggle-panel mt-2 p-3 rounded-4"
+               style="display:none; background:#ffe4e9; color:#6b2d44;">
+            Pink combines red's energy with white's calm — a cozy middle.
+          </div>
+        </div>
+        <div class="col-md-4">
+          <button class="btn w-100 rounded-pill toggle-btn"
+                  data-target="#panel3"
+                  style="background:#ffb6c1; color:#4a1e2b; border:1px solid #ff8da1;">
+            Playfulness
+          </button>
+          <div id="panel3" class="toggle-panel mt-2 p-3 rounded-4"
+               style="display:none; background:#ffe4e9; color:#6b2d44;">
+            Pink invites interaction — you want to click, hover, explore.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4. TABS (jQuery show/hide) ============ -->
+    <section class="mb-5">
+      <h2 class="mb-4" style="color:#b3415e; border-left:6px solid #ff8da1; padding-left:1.25rem;">
+        Our little timeline
+      </h2>
+      <ul class="nav nav-pills gap-2 mb-3" id="timelineTabs">
+        <li class="nav-item">
+          <button class="nav-link rounded-pill tab-btn active"
+                  data-tab="#tab-2023"
+                  style="background:#ffb6c1; color:#4a1e2b; border:1px solid #ff8da1;">
+            2023
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link rounded-pill tab-btn"
+                  data-tab="#tab-2024"
+                  style="color:#a54f68; border:1px solid #ffb6c1;">
+            2024
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link rounded-pill tab-btn"
+                  data-tab="#tab-2025"
+                  style="color:#a54f68; border:1px solid #ffb6c1;">
+            2025
+          </button>
+        </li>
+      </ul>
+      <div id="tab-2023" class="tab-pane-custom p-4 rounded-4 shadow-sm"
+           style="background:#ffeef2; border:1px solid #ffc1cc;">
+        🌱 Pink petals was just an idea — one HTML file, one pink hex.
+      </div>
+      <div id="tab-2024" class="tab-pane-custom p-4 rounded-4 shadow-sm"
+           style="display:none; background:#ffeef2; border:1px solid #ffc1cc;">
+        🌿 Bootstrap joined the party. Responsive pink everywhere.
+      </div>
+      <div id="tab-2025" class="tab-pane-custom p-4 rounded-4 shadow-sm"
+           style="display:none; background:#ffeef2; border:1px solid #ffc1cc;">
+        🌸 jQuery now drives the soft interactions you're using right now.
+      </div>
+    </section>
+
+    <!-- ============ 5. LIST BUILDER (jQuery DOM manipulation) ============ -->
+    <section class="mb-5">
+      <h2 class="mb-4" style="color:#b3415e; border-left:6px solid #ff8da1; padding-left:1.25rem;">
+        Things we love
+      </h2>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="input-group">
+            <input type="text" id="loveInput" class="form-control rounded-start-pill"
+                   placeholder="Add something you love…"
+                   style="background:#fff0f5; border-color:#ffb6c1;">
+            <button id="addLove" class="btn rounded-end-pill"
+                    style="background:#ffb6c1; color:#4a1e2b; border:1px solid #ff8da1;">
+              Add
+            </button>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <button id="clearLove" class="btn rounded-pill w-100"
+                  style="background:#ffe4e9; color:#8a2e4a; border:1px solid #ffb6c1;">
+            Clear all
+          </button>
+        </div>
+      </div>
+      <ul id="loveList" class="list-group mt-3">
+        <li class="list-group-item d-flex justify-content-between align-items-center"
+            style="background:#ffe2eb; border-color:#ffc1cc;">
+          Soft pink gradients
+          <span class="remove-love badge rounded-pill"
+                style="background:#ff8da1; cursor:pointer;">✕</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ 6. FETCH MOCK DATA (jQuery $.ajax simulation) ============ -->
+    <section class="mb-5">
+      <h2 class="mb-4" style="color:#b3415e; border-left:6px solid #ff8da1; padding-left:1.25rem;">
+        A random pink fact
+      </h2>
+      <div class="p-4 rounded-4 shadow-sm" style="background:#ffeef2; border:1px solid #ffc1cc;">
+        <p id="factBox" class="fs-5 mb-3">Click the button to load a fact…</p>
+        <button id="loadFact" class="btn rounded-pill px-4"
+                style="background:#ffb6c1; color:#4a1e2b; border:1px solid #ff8da1;">
+          Load fact 💡
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ 7. HOVER CARD (jQuery effects) ============ -->
+    <section class="mb-3">
+      <h2 class="mb-4" style="color:#b3415e; border-left:6px solid #ff8da1; padding-left:1.25rem;">
+        Hover me
+      </h2>
+      <div id="hoverCard" class="p-5 rounded-4 shadow-sm text-center mx-auto"
+           style="max-width:500px; background:#ffe2eb; border:2px dashed #ff97b0; transition:0.3s;">
+        <div class="fs-1 mb-2">💗</div>
+        <p class="mb-0" style="color:#6b2d44;">Move your mouse here — jQuery fades the whole card.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 pink petals — about</p>
+  </footer>
+
+  <!-- jQuery (must load BEFORE your custom jQuery code) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Bootstrap JS bundle (needed for navbar toggle) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- your jQuery code -->
+  <script src="jquery.js"> </script>
+</body>
+</html>

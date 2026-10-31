@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pink site · Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <header class="border-bottom mb-4" style="border-color:#ffb6c1 !important;">
+    <nav class="navbar navbar-expand-md container py-3">
+      <div class="container-fluid px-0">
+
+        <!-- brand / title -->
+        <a class="navbar-brand fs-2 fw-light mb-0 text-decoration-none"
+           href="home.html"
+           style="color:#c74b6b; letter-spacing:2px; text-shadow:0 2px 5px rgba(255,192,203,0.6);">
+          🌸 pink petals
+        </a>
+
+        <!-- mobile toggle -->
+        <button class="navbar-toggler border-0" type="button"
+                data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"
+                style="background:#ffe4e9; border:1px solid #ffb6c1 !important; border-radius:40px; padding:0.4rem 0.9rem;">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- links -->
+        <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+          <ul class="navbar-nav gap-2 gap-md-4 mt-3 mt-md-0">
+            <li class="nav-item">
+              <a class="nav-link rounded-pill px-3 py-2 fw-semibold active"
+                 href="home.html"
+                 style="background:#ffb6c1; color:#4a1e2b; border:1px solid #ff8da1; box-shadow:0 4px 10px rgba(255,140,160,0.3);"
+                 aria-current="page">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link rounded-pill px-3 py-2 fw-semibold"
+                 href="about.html"
+                 style="color:#a54f68;">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link rounded-pill px-3 py-2 fw-semibold"
+                 href="contact.html"
+                 style="color:#a54f68;">Contact</a>
+            </li>
+              <li class="nav-item">
+    <a class="nav-link rounded-pill px-3 py-2 fw-semibold"
+       href="crud.html"
+       style="color:#a54f68;">CRUD</a>
+  </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- carousel section – replaces the old hero section -->
+    <section class="carousel-container">
+      <div class="carousel">
+        <div class="carousel-track" id="carouselTrack">
+          <!-- Slides – images from /images folder -->
+          <div class="carousel-slide">
+            <img src="images/fl1.avif" alt="Soft pink petals" loading="lazy">
+          </div>
+          <div class="carousel-slide">
+            <img src="images/fl2.jfif" alt="Rosy dream" loading="lazy">
+          </div>
+          <div class="carousel-slide">
+            <img src="images/fl3.jfif" alt="Pink comfort" loading="lazy">
+          </div>
+          <div class="carousel-slide">
+            <img src="images/fl4.jfif" alt="Blush clouds" loading="lazy">
+          </div>
+          <div class="carousel-slide">
+            <img src="images/fl5.jfif" alt="Pink rose" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <!-- dots + navigation row -->
+      <div class="carousel-nav">
+        <button class="carousel-btn" id="prevBtn" aria-label="Previous slide">‹</button>
+
+        <div class="carousel-dots" id="carouselDots">
+          <!-- dots will be injected by js (or hardcoded if you prefer) -->
+        </div>
+
+        <button class="carousel-btn" id="nextBtn" aria-label="Next slide">›</button>
+      </div>
+
+      <!-- cute label below (optional) -->
+      <div class="pink-box" style="margin-top: 1.2rem; padding: 0.8rem 1.5rem; font-size: 1.1rem;">
+        🌸 every page is wrapped in pink comfort 🌸
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 pink petals — home</p>
+  </footer>
+
+    <script src="carousel.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

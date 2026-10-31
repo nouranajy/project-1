@@ -1,0 +1,311 @@
+/* style.css — all pink, soft and simple */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', 'Helvetica Neue', system-ui, sans-serif;
+  background: #fff0f5;        /* lavender blush */
+  color: #5a3e4b;            /* soft muted plum */
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0 1.5rem;
+}
+
+/* header + navigation */
+header {
+  text-align: center;
+  padding: 2rem 0 1rem;
+  border-bottom: 3px solid #ffb6c1;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: #c74b6b;
+  text-shadow: 0 2px 5px rgba(255, 192, 203, 0.6);
+  margin-bottom: 0.75rem;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #a54f68;
+  padding: 0.4rem 1rem;
+  border-radius: 40px;
+  transition: 0.25s ease;
+  background: transparent;
+  border: 2px solid transparent;
+}
+
+nav a:hover {
+  background: #ffe4e9;
+  border-color: #ffb6c1;
+  color: #8a2e4a;
+  transform: scale(1.02);
+}
+
+nav a.active {
+  background: #ffb6c1;
+  color: #4a1e2b;
+  border-color: #ff8da1;
+  box-shadow: 0 4px 10px rgba(255, 140, 160, 0.3);
+}
+
+/* main content */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0 2.5rem;
+}
+
+.hero,
+.about-card,
+.contact-card {
+  background: #ffeef2;
+  max-width: 750px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  border-radius: 40px 40px 40px 40px;
+  box-shadow: 0 15px 30px -10px #ffb6c1, 0 0 0 2px #ffdae0 inset;
+  border: 1px solid #ffc1cc;
+  transition: 0.2s;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #b3415e;
+  border-left: 6px solid #ff8da1;
+  padding-left: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: 1.15rem;
+}
+
+.pink-box {
+  background: #ffd9e2;
+  border-radius: 30px;
+  padding: 1rem 1.8rem;
+  margin-top: 1.8rem;
+  font-weight: 500;
+  color: #6b2d44;
+  border: 2px dashed #ff97b0;
+  text-align: center;
+  font-size: 1.15rem;
+  box-shadow: 0 4px 8px rgba(255, 150, 170, 0.3);
+}
+
+/* contact-specific */
+.contact-details {
+  background: #ffe2eb;
+  border-radius: 30px;
+  padding: 1.4rem 2rem;
+  margin: 1.6rem 0 1rem;
+  border-left: 8px solid #ff8da1;
+}
+
+.contact-details p {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* footer */
+footer {
+  text-align: center;
+  padding: 1.5rem 0 1rem;
+  margin-top: 1.5rem;
+  border-top: 2px solid #ffb6c1;
+  color: #a5566e;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+/* small screens */
+@media (max-width: 500px) {
+  body { padding: 0 1rem; }
+  h1 { font-size: 1.9rem; }
+  nav { gap: 0.8rem; }
+  nav a { font-size: 1rem; padding: 0.3rem 0.8rem; }
+  .hero, .about-card, .contact-card { padding: 1.6rem; }
+  h2 { font-size: 1.6rem; }
+}
+
+/* extra softness for links inside text */
+a {
+  color: #b3415e;
+}
+
+    /* ----- carousel wrapper – all pink, soft, matches style.css ----- */
+    .carousel-container {
+      background: #ffeef2;
+      max-width: 750px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 2.5rem;
+      border-radius: 40px;
+      box-shadow: 0 15px 30px -10px #ffb6c1, 0 0 0 2px #ffdae0 inset;
+      border: 1px solid #ffc1cc;
+      transition: 0.2s;
+      position: relative;
+    }
+
+    .carousel {
+      display: flex;
+      overflow: hidden;
+      border-radius: 30px;
+      box-shadow: 0 8px 18px rgba(255, 140, 160, 0.25);
+      background: #ffe2eb;
+      border: 2px solid #ffb6c1;
+      margin-bottom: 1.2rem;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      width: 100%;
+    }
+
+    .carousel-slide {
+      flex: 0 0 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff0f5;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: auto;
+      max-height: 380px;
+      object-fit: cover;
+      display: block;
+      border-radius: 28px;
+      box-shadow: 0 2px 12px #ffb6c180;
+    }
+
+    /* navigation dots – soft pink */
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      margin: 0.8rem 0 0.2rem;
+    }
+
+    .dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #ffb6c1;
+      border: 2px solid #ff8da1;
+      cursor: pointer;
+      transition: 0.2s ease;
+      padding: 0;
+      box-shadow: 0 2px 6px rgba(255, 140, 160, 0.4);
+    }
+
+    .dot.active {
+      background: #c74b6b;
+      border-color: #b3415e;
+      transform: scale(1.2);
+      box-shadow: 0 0 0 2px #ffe4e9, 0 4px 8px #ff8da1;
+    }
+
+    .dot:hover {
+      background: #ff8da1;
+      transform: scale(1.15);
+    }
+
+    /* arrow buttons (optional, but adds cuteness) – can be removed if you prefer */
+    .carousel-btn {
+      background: #ffe4e9;
+      border: 2px solid #ffb6c1;
+      color: #a54f68;
+      font-size: 2rem;
+      font-weight: 300;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: 0.25s ease;
+      box-shadow: 0 4px 10px rgba(255, 182, 193, 0.4);
+      line-height: 1;
+      user-select: none;
+    }
+
+    .carousel-btn:hover {
+      background: #ffb6c1;
+      color: #4a1e2b;
+      border-color: #ff8da1;
+      transform: scale(1.07);
+    }
+
+    .carousel-btn:active {
+      transform: scale(0.98);
+    }
+
+    .carousel-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 0.2rem;
+    }
+
+    .carousel-label {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #8a2e4a;
+      background: #ffe4e9;
+      padding: 0.2rem 1.6rem;
+      border-radius: 40px;
+      border: 2px dashed #ff97b0;
+      box-shadow: 0 2px 6px #ffb6c180;
+    }
+
+    /* small screens – carousel tweaks */
+    @media (max-width: 500px) {
+      .carousel-container {
+        padding: 1.2rem 0.8rem 1.8rem;
+      }
+      .carousel-slide img {
+        max-height: 240px;
+      }
+      .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1.6rem;
+      }
+      .carousel-label {
+        font-size: 1rem;
+        padding: 0.2rem 1rem;
+      }
+      .dot {
+        width: 12px;
+        height: 12px;
+      }
+    }

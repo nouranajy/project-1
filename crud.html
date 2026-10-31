@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pink site · CRUD</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="border-bottom mb-4" style="border-color:#ffb6c1 !important;">
+    <nav class="navbar navbar-expand-md container py-3">
+      <div class="container-fluid px-0">
+
+        <a class="navbar-brand fs-2 fw-light mb-0 text-decoration-none"
+           href="home.html"
+           style="color:#c74b6b; letter-spacing:2px; text-shadow:0 2px 5px rgba(255,192,203,0.6);">
+          🌸 pink petals
+        </a>
+
+        <button class="navbar-toggler border-0" type="button"
+                data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"
+                style="background:#ffe4e9; border:1px solid #ffb6c1 !important; border-radius:40px; padding:0.4rem 0.9rem;">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+          <ul class="navbar-nav gap-2 gap-md-4 mt-3 mt-md-0">
+            <li class="nav-item">
+              <a class="nav-link rounded-pill px-3 py-2 fw-semibold"
+                 href="home.html" style="color:#a54f68;">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link rounded-pill px-3 py-2 fw-semibold"
+                 href="about.html" style="color:#a54f68;">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link rounded-pill px-3 py-2 fw-semibold"
+                 href="contact.html" style="color:#a54f68;">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link rounded-pill px-3 py-2 fw-semibold active"
+                 href="crud.html"
+                 style="background:#ffb6c1; color:#4a1e2b; border:1px solid #ff8da1; box-shadow:0 4px 10px rgba(255,140,160,0.3);"
+                 aria-current="page">CRUD</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-5" style="display:block; flex:none; align-items:unset;">
+
+    <!-- ============ HERO ============ -->
+    <section class="p-5 mb-4 rounded-4 shadow-sm"
+             style="background:#ffeef2; border:1px solid #ffc1cc;">
+      <h2 class="display-5 fw-light" style="color:#b3415e;">Petals manager 🌸</h2>
+      <p class="col-md-8 fs-5 mb-0">
+        A tiny CRUD app — <strong>C</strong>reate, <strong>R</strong>ead,
+        <strong>U</strong>pdate, <strong>D</strong>elete. Data lives in your browser
+        (localStorage), so it survives a refresh.
+      </p>
+    </section>
+
+    <!-- ============ FORM (Create / Update) ============ -->
+    <section class="p-4 p-md-5 rounded-4 shadow-sm mb-4"
+             style="background:#ffeef2; border:1px solid #ffc1cc;">
+      <h2 class="mb-4" style="color:#b3415e; border-left:6px solid #ff8da1; padding-left:1.25rem;">
+        <span id="formTitle">Add a petal</span>
+      </h2>
+      <form id="petalForm" novalidate>
+        <input type="hidden" id="petalId">
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="petalName" class="form-label">Petal name <span class="text-danger">*</span></label>
+            <input type="text" class="form-control rounded-pill" id="petalName"
+                   placeholder="e.g. Rose blush"
+                   style="background:#fff0f5; border-color:#ffb6c1;">
+            <div class="invalid-feedback">Please give your petal a name.</div>
+          </div>
+
+          <div class="col-md-3">
+            <label for="petalColor" class="form-label">Color</label>
+            <select class="form-select rounded-pill" id="petalColor"
+                    style="background:#fff0f5; border-color:#ffb6c1;">
+              <option value="Blush">Blush</option>
+              <option value="Rose">Rose</option>
+              <option value="Fuchsia">Fuchsia</option>
+              <option value="Coral">Coral</option>
+              <option value="Magenta">Magenta</option>
+            </select>
+          </div>
+
+          <div class="col-md-3">
+            <label for="petalPrice" class="form-label">Price (€) <span class="text-danger">*</span></label>
+            <input type="number" class="form-control rounded-pill" id="petalPrice"
+                   placeholder="0.00" min="0" step="0.01"
+                   style="background:#fff0f5; border-color:#ffb6c1;">
+            <div class="invalid-feedback">Enter a valid price (≥ 0).</div>
+          </div>
+
+          <div class="col-12">
+            <label for="petalDesc" class="form-label">Description</label>
+            <textarea class="form-control rounded-4" id="petalDesc" rows="2"
+                      placeholder="Optional notes…"
+                      style="background:#fff0f5; border-color:#ffb6c1;"></textarea>
+          </div>
+
+          <div class="col-12 d-flex gap-2 justify-content-end">
+            <button type="button" id="cancelEdit"
+                    class="btn rounded-pill px-4 d-none"
+                    style="background:#ffe4e9; color:#8a2e4a; border:1px solid #ffb6c1;">
+              Cancel
+            </button>
+            <button type="submit" id="submitBtn"
+                    class="btn rounded-pill px-4"
+                    style="background:#ffb6c1; color:#4a1e2b; border:1px solid #ff8da1;">
+              Save petal 🌷
+            </button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- ============ TOOLBAR ============ -->
+    <section class="row g-2 mb-3 align-items-center">
+      <div class="col-md-5">
+        <input type="search" id="searchInput" class="form-control rounded-pill"
+               placeholder="🔍 Search by name or color…"
+               style="background:#fff0f5; border-color:#ffb6c1;">
+      </div>
+      <div class="col-md-4">
+        <select id="sortSelect" class="form-select rounded-pill"
+                style="background:#fff0f5; border-color:#ffb6c1;">
+          <option value="newest">Sort: newest first</option>
+          <option value="oldest">Sort: oldest first</option>
+          <option value="name-asc">Sort: name A→Z</option>
+          <option value="name-desc">Sort: name Z→A</option>
+          <option value="price-asc">Sort: price low→high</option>
+          <option value="price-desc">Sort: price high→low</option>
+        </select>
+      </div>
+      <div class="col-md-3 d-flex justify-content-md-end gap-2">
+        <button id="seedBtn" class="btn rounded-pill flex-fill flex-md-grow-0"
+                style="background:#ffe4e9; color:#8a2e4a; border:1px solid #ffb6c1;">
+          Seed demo
+        </button>
+        <button id="clearAllBtn" class="btn rounded-pill flex-fill flex-md-grow-0"
+                style="background:#ffd9e2; color:#6b2d44; border:1px solid #ff97b0;">
+          Clear all
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ TABLE (Read) ============ -->
+    <section class="mb-3">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <h3 class="h5 mb-0" style="color:#b3415e;">Petals collection</h3>
+        <span class="badge rounded-pill" id="countBadge"
+              style="background:#ff8da1;">0 items</span>
+      </div>
+
+      <div class="table-responsive rounded-4 shadow-sm overflow-hidden">
+        <table class="table align-middle mb-0" style="background:#fff0f5;">
+          <thead style="background:#ffb6c1; color:#4a1e2b;">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Color</th>
+              <th scope="col">Price</th>
+              <th scope="col">Description</th>
+              <th scope="col" class="text-end">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="petalTableBody">
+            <!-- rows injected by jQuery -->
+          </tbody>
+        </table>
+      </div>
+
+      <div id="emptyState" class="text-center p-5 rounded-4 mt-3"
+           style="background:#ffe4e9; color:#8a2e4a; border:2px dashed #ff97b0; display:none;">
+        <div class="fs-1">🌷</div>
+        <p class="mb-0">No petals yet — add your first one above.</p>
+      </div>
+    </section>
+
+    <!-- ============ TOAST (feedback) ============ -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index:1080;">
+      <div id="appToast" class="toast align-items-center border-0 rounded-4"
+           role="alert" aria-live="assertive" aria-atomic="true"
+           style="background:#ffb6c1; color:#4a1e2b;">
+        <div class="d-flex">
+          <div class="toast-body" id="toastMsg">Saved!</div>
+          <button type="button" class="btn-close me-2 m-auto"
+                  data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2025 pink petals — crud</p>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- Bootstrap bundle (navbar + toast) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- CRUD app -->
+  <script src="crud.js"></script>
+</body>
+</html>
